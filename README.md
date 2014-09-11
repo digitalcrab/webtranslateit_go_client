@@ -14,13 +14,17 @@ To install this package, please, use default **go get** tool
 
 Authentication is made by so-called API tokens, and of course you need specify this one of the token to the `WebTranslateIt` structure.
 
-    import wti_client "github.com/fromYukki/webtranslateit_go_client"
-    
+```go
+import wti_client "github.com/fromYukki/webtranslateit_go_client"
+
+func main() {
     wti := wti_client.NewWebTranslateIt("YOUR_TOKEN")
     project, err := wti.GetProject()
     if err != nil {
         panic(err)
     }
+}
+```
 
 If you need to change API URL address or Token you can do it using next methods: `SetApiUrl` and `SetToken`.
 
@@ -32,11 +36,13 @@ Project API section has only one method *Show Project*. You can read about it [h
 
 As shown in the example above, you can get the project and use it data as you wish. For more information, please, take a look on `Project` structure.
 
-    import (
-        "fmt"
-        wti_client "github.com/fromYukki/webtranslateit_go_client"
-    )
-    
+```go
+import (
+    "fmt"
+    wti_client "github.com/fromYukki/webtranslateit_go_client"
+)
+
+func main() {
     wti := wti_client.NewWebTranslateIt("YOUR_TOKEN")
     project, err := wti.GetProject()
     if err != nil {
@@ -44,6 +50,8 @@ As shown in the example above, you can get the project and use it data as you wi
     }
     
     fmt.Printf("Project name: %q with %d files", project.Name, len(project.ProjectFiles))
+}
+```
     
 ### File API
 
@@ -53,11 +61,13 @@ Only one method is implemented in the File API section. The rest you can find [h
 
 The easiest method to get all the translation files - is to download them in Zip archive.
 
-    import (
-        "fmt"
-        wti_client "github.com/fromYukki/webtranslateit_go_client"
-    )
-    
+```go
+import (
+    "fmt"
+    wti_client "github.com/fromYukki/webtranslateit_go_client"
+)
+
+func main() {
     var (
         err     error
         project wti_client.Project
@@ -81,4 +91,5 @@ The easiest method to get all the translation files - is to download them in Zip
     for fileName, fileData := range data {
         fmt.Printf("Extracted file %q with %d bytes length", fileName, len(fileData))
     }
-
+}
+```
