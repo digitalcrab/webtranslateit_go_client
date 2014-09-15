@@ -1,6 +1,6 @@
 # WebTranslateIt GoLang Client
 
-[![Build Status](https://secure.travis-ci.org/fromYukki/webtranslateit_go_client.png?branch=master)](http://travis-ci.org/fromYukki/webtranslateit_go_client)
+[![Build Status](https://secure.travis-ci.org/fromYukki/webtranslateit_go_client.svg?branch=master)](http://travis-ci.org/fromYukki/webtranslateit_go_client)
 
 This package is under active development. You can get more information about WebTranslateIt API using this link [https://webtranslateit.com/en/docs/api/](https://webtranslateit.com/en/docs/api/).
 
